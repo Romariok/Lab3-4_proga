@@ -10,7 +10,9 @@ public enum State {
     TALK("talking"),
     WALK("walking"),
     OBSERVE("observing"),
-    SIT("sitting");
+    SIT("sitting"),
+    AREST("arrested"),
+    USE("in use");
     private final String Status;
     State(String status) {
         Status = status;

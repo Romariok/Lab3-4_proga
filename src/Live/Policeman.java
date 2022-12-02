@@ -8,8 +8,9 @@ public class Policeman extends Human{
         super(name, mood, state, nativeLanguage);
     }
 
-    public void caughtCriminal(){
-        System.out.println(getName() + "Я поймал преступника!");
+    public void arrest(Human human){
+        human.setState(State.AREST);
+        System.out.println(getName() + ": Я поймал "+human.getName()+ "!");
     }
     public void patrolling(){
         setState(State.WALK);

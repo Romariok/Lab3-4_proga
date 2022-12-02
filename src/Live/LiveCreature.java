@@ -1,7 +1,10 @@
 package Live;
+import Objects.Objects;
 import Others.State;
 import Interfaces.Alive;
 import Interfaces.StateNameInterface;
+
+import java.util.concurrent.TimeUnit;
 
 
 public abstract class LiveCreature implements Alive, StateNameInterface{
@@ -23,7 +26,14 @@ public abstract class LiveCreature implements Alive, StateNameInterface{
     public final String getName(){
         return this.Name;
     }
-
+    public void listen(){
+        setState(State.LISTEN);
+        try {
+            TimeUnit.SECONDS.sleep(1);
+        } catch (InterruptedException ie) {
+            Thread.currentThread().interrupt();
+        }
+    }
     public void setState(State newState){
         if (this.getState() == newState){
             System.out.println(this.getName()+" is already "+ this.getState().toString());

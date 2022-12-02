@@ -5,8 +5,8 @@ import Interfaces.NotAlive;
 import Interfaces.StateNameInterface;
 
 public abstract class Objects implements NotAlive, StateNameInterface {
-    private String Name;
-    private Materials Material;
+    private final String Name;
+    private final Materials Material;
     private State State;
     public Objects(String name, Materials material, State state){
         this.Name = name;
@@ -20,7 +20,9 @@ public abstract class Objects implements NotAlive, StateNameInterface {
     public final String getName(){
         return this.Name;
     }
-
+    public final Materials getMaterial() {
+        return this.Material;
+    }
     public void setState(State newState){
         if (this.getState() == newState){
             System.out.println(this.getName()+" is already "+ this.getState().toString());
@@ -30,11 +32,4 @@ public abstract class Objects implements NotAlive, StateNameInterface {
             System.out.println(this.getName()+" is "+ this.getState().toString()+" right now");
         }
     }
-
-    public final Materials getMaterial() {
-        return this.Material;
-    }
-
-
-
 }
