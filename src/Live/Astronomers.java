@@ -7,16 +7,11 @@ public class Astronomers extends Human {
         super(name, mood, state, nativeLanguage);
     }
     public boolean checkObj(Spaceship spc){
-        if (spc.getState()==State.FLY) return true;
-        else {
-            return false;
-        }
+        return (spc.getState()==State.FLY);
+
     }
     public boolean checkMultiplicityAndUsing(Telescope tls){
-        if (tls.getState()==State.USE && tls.getMultiplicity() >=8) return true;
-        else {
-            return false;
-        }
+        return (tls.getState()==State.USE && tls.getMultiplicity() >=8);
     }
 
     public String getDestination(Spaceship spc, Telescope tls){
