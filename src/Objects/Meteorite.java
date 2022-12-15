@@ -1,8 +1,9 @@
 package Objects;
 
+import Interfaces.ThingInSpace;
 import Others.State;
 
-public class Meteorite extends Objects{
+public class Meteorite extends Objects implements ThingInSpace {
     private SizeOfGravityWaves Size;
     public int x_now;
     public int x_SomeminAgo;

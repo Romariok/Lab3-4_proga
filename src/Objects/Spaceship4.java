@@ -1,8 +1,9 @@
 package Objects;
 
+import Interfaces.ThingInSpace;
 import Others.State;
 import exceptions.NegativeNumberOfPeopleException;
-public class Spaceship4 extends Spaceship{
+public class Spaceship4 extends Spaceship implements ThingInSpace {
     private SizeOfGravityWaves Size;
     private Direction Direction;
     private int NumberOfPeople;
