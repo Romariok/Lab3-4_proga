@@ -22,21 +22,42 @@ public class Main1 {
         astronomers.setStateToSomething(gravityLocator, State.USE);
         astronomers.exploreObject(meteorite1, telescope, screen, gravityLocator);
         astronomers.exploreObject(meteorite2, telescope, screen, gravityLocator);
-//        СТАРАЯ ИСТОРИЯ
-        String checkObjectInSpace = astronomers.exploreObject(spaceship, telescope, screen, gravityLocator);
-        String checkCallToSpruts = spruts.getCall(checkObjectInSpace);
-        rjigl.getCall(checkCallToSpruts);
+        if (telescope.getAngles()== Telescope4.Angles.CENTER){
+            //        СТАРАЯ ИСТОРИЯ
+            String checkObjectInSpace = astronomers.exploreObject(spaceship, telescope, screen, gravityLocator);
+            String checkCallToSpruts = spruts.getCall(checkObjectInSpace);
+            rjigl.getCall(checkCallToSpruts);
 //        СТАРАЯ ИСТОРИЯ ЗАКОНЧИЛАСЬ
-        spaceship.setPlanetaryGravity(PlanetaryGravity.NONE);
+            spaceship.setPlanetaryGravity(PlanetaryGravity.NONE);
 
-        spaceship.setAccelerationInSpace(-1);
-        spaceship.setDirection(Direction.TOWARDSPLANET);
-        if (spaceship.rotationInSpace && spaceship.getAccelerationInSpace()<0){
+            spaceship.setAccelerationInSpace(-1);
+            spaceship.setDirection(Direction.TOWARDSPLANET);
+            if (spaceship.rotationInSpace && spaceship.getAccelerationInSpace()<0){
+                spaceship.setPlanetaryGravity(PlanetaryGravity.MOON);
+                spaceship.setAccelerationInSpace(0);
+                gravityLocator.getVolume(spaceship, astronomers);
+                gravityLocator.getWeight(spaceship, astronomers);
+                astronomers.saidAboutNumberOfPeople(spaceship);
+                if (peopleInSpaceship.AgreeOnLandingPlace){
+                    spaceship.seekingWhileLooping(24, spaceship1);
+                    System.out.println("Конец!");
+                }
+                else {
+                    System.out.println(spaceship.getName()+": А куда мы сядем? Мы этого не обговаривали!");
+                }
+            }
+            else{
+                System.out.println(spaceship.getName()+" пролетел мимо планеты\nКонец!!");
+            }
+        }
+        else{
+            System.out.println(astronomers.getName()+" смотрели в другую сторону и не увидели корабля");
+            spaceship.setPlanetaryGravity(PlanetaryGravity.NONE);
+
+            spaceship.setAccelerationInSpace(-1);
+            spaceship.setDirection(Direction.TOWARDSPLANET);
             spaceship.setPlanetaryGravity(PlanetaryGravity.MOON);
             spaceship.setAccelerationInSpace(0);
-            gravityLocator.getVolume(spaceship, astronomers);
-            gravityLocator.getWeight(spaceship, astronomers);
-            astronomers.saidAboutNumberOfPeople(spaceship);
             if (peopleInSpaceship.AgreeOnLandingPlace){
                 spaceship.seekingWhileLooping(24, spaceship1);
                 System.out.println("Конец!");
@@ -45,9 +66,7 @@ public class Main1 {
                 System.out.println(spaceship.getName()+": А куда мы сядем? Мы этого не обговаривали!");
             }
         }
-        else{
-            System.out.println(spaceship.getName()+" пролетел мимо планеты\nКонец!!");
-        }
+
     }
 
 }
