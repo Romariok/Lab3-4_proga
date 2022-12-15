@@ -17,7 +17,7 @@ public class Astronomers extends Human {
     public String getDestination(Spaceship spc, Telescope tls){
         if (checkObj(spc) && checkMultiplicityAndUsing(tls)){
             int[] a = spc.getCoordinates();
-            int Velocity = (a[1] - a[0])/(10*60);
+            int Velocity = (a[1] - a[0])/(a[2]*60);
 
             if (Velocity >1600){
                 setMood(Mood.PANIC);

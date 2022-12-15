@@ -3,24 +3,18 @@ package Objects;
 import Others.State;
 
 public class Spaceship extends Objects{
-    public int x_now;
-    public int x_10minAgo;
-    public int PassengerNumber;
-    public Spaceship(String name, Materials material, State state, int pasnum, int x_10minAgo, int x_now){
-        super(name, material, state);
+    private final int x_now;
+    private final int x_SomeminAgo;
+    private final int Minute;
+    public Spaceship(String name, Materials material, State state, PlanetaryGravity planetaryGravity, int minute, int x_someminAgo, int x_now){
+        super(name, material, state, planetaryGravity);
         this.x_now = x_now;
-        this.x_10minAgo = x_10minAgo;
-        this.PassengerNumber = pasnum;
+        this.x_SomeminAgo = x_someminAgo;
+        this.Minute = minute;
     }
-    public Spaceship(String name, Materials material, State state, int pasnum){
-        super(name, material, state);
-        this.PassengerNumber = pasnum;
-    }
-    public final int getNumber(){
-        return this.PassengerNumber;
-    }
+
     public int[] getCoordinates(){
-        int[] coordinates = {x_10minAgo, x_now};
+        int[] coordinates = {this.x_SomeminAgo, this.x_now, this.Minute};
         return coordinates;
     }
 

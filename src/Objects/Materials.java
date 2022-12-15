@@ -2,7 +2,9 @@ package Objects;
 
 public enum Materials {
     METAL("metal"),
-    PLASTIC("plastic");
+    PLASTIC("plastic"),
+    SPACESTONE("spacestone"),
+    GLASS("glass");
 
 
     private final String name;

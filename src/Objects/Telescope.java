@@ -4,8 +4,8 @@ import Others.State;
 
 public class Telescope extends Objects{
     private final int multiplicity;
-    public Telescope(String name, Materials material, State state, int Multiplicity){
-        super(name, material, state);
+    public Telescope(String name, Materials material, State state, PlanetaryGravity planetaryGravity, int Multiplicity){
+        super(name, material, state, planetaryGravity);
         this.multiplicity = Multiplicity;
     }
 

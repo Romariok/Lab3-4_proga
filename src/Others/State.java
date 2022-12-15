@@ -6,7 +6,7 @@ public enum State {
     LISTEN("listening"),
     REPORT("reporting"),
     FLY("flying"),
-    FALL("falling"),
+    SEEK("seeking"),
     TALK("talking"),
     WALK("walking"),
     OBSERVE("observing"),
