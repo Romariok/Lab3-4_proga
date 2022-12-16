@@ -16,6 +16,7 @@ public abstract class Objects implements NotAlive, StateNameInterface {
         this.PlanetaryGravity = planetaryGravity;
     }
 
+    public abstract void beAstroneersProperty();
     public final State getState(){
         return this.State;
     }

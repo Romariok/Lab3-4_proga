@@ -34,5 +34,21 @@ public class Telescope4 extends Telescope{
         return spc.getSize();
     }
 
+    @Override
+    public String toString(){
+        return "Этот "+getName()+" сделан из "+getMaterial().toString()+". Он нужен для наблюдения за объектами в космосе.\n"+
+                "Он имеет кратность " + getMultiplicity() + "и направлен в " + getAngles().toString() + " сторону";
+    }
 
+    @Override
+    public int hashCode(){
+        return this.getMaterial().hashCode() + this.getName().hashCode() + this.getState().hashCode() +
+                this.getAngles().hashCode();
+    }
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+        return obj instanceof Telescope4 && this.hashCode() == obj.hashCode();
+    }
 }

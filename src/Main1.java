@@ -30,9 +30,11 @@ public class Main1 {
 //        СТАРАЯ ИСТОРИЯ ЗАКОНЧИЛАСЬ
             spaceship.setPlanetaryGravity(PlanetaryGravity.NONE);
 
+
             spaceship.setAccelerationInSpace(-1);
             spaceship.setDirection(Direction.TOWARDSPLANET);
             if (spaceship.rotationInSpace && spaceship.getAccelerationInSpace()<0){
+                astronomers.awarness(spaceship);
                 spaceship.setPlanetaryGravity(PlanetaryGravity.MOON);
                 spaceship.setAccelerationInSpace(0);
                 gravityLocator.getVolume(spaceship, astronomers);

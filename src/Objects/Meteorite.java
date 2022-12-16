@@ -20,7 +20,10 @@ public class Meteorite extends Objects implements ThingInSpace {
         this.Direction = direction;
         this.AccelerationInSpace = accelerationInSpace;
     }
-
+    @Override
+    public void beAstroneersProperty(){
+        System.out.println(getName()+" не является собственностью лунных астрономов");
+    }
     public int[] getCoordinates(){
         int[] coordinates = {this.x_SomeminAgo, this.x_now, this.Minute};
         return coordinates;
@@ -52,5 +55,23 @@ public class Meteorite extends Objects implements ThingInSpace {
             this.AccelerationInSpace = newAcceleration;
             System.out.println(this.getName()+" is having"+ this.getAccelerationInSpace()+" acceleration right now");
         }
+    }
+
+    @Override
+    public String toString(){
+        return "Это "+getName()+", сделан из "+getMaterial().toString()+".\nОн летит с ускорением "+ getAccelerationInSpace()+
+                " в "+ getDirection().toString()+" направлении. Он испускает волны тяготения размера " + getSize().toString();
+    }
+
+    @Override
+    public int hashCode(){
+        return this.getMaterial().hashCode() + this.getName().hashCode() + this.getState().hashCode() +
+                this.getSize().hashCode() + this.getDirection().hashCode();
+    }
+    @Override
+    public boolean equals(Object obj) {
+        if (this.hashCode() == obj.hashCode()) return true;
+        if (this.hashCode() != obj.hashCode()) return false;
+        return this.toString() == obj.toString();
     }
 }

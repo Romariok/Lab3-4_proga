@@ -26,14 +26,9 @@ public abstract class LiveCreature implements Alive, StateNameInterface{
     public final String getName(){
         return this.Name;
     }
-    public void listen(){
-        setState(State.LISTEN);
-        try {
-            TimeUnit.SECONDS.sleep(1);
-        } catch (InterruptedException ie) {
-            Thread.currentThread().interrupt();
-        }
-    }
+
+    public abstract void eat(String nameOfMeal);
+    public abstract void listen();
     public void setState(State newState){
         if (this.getState() == newState){
             System.out.println(this.getName()+" is already "+ this.getState().toString());

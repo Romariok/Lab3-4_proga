@@ -6,7 +6,10 @@ public class Spruts extends Human {
     public Spruts(String name, Mood mood, State state, String nativeLanguage){
         super(name, mood, state, nativeLanguage);
     }
-
+    @Override
+    public void gotIntelligence() {
+        System.out.println(getName()+"не имееет интеллект");
+    }
     public String getCall(String themeOfCall){
         if (themeOfCall == "MOON"){
             listen();

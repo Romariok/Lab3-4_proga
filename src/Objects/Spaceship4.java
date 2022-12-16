@@ -73,4 +73,22 @@ public class Spaceship4 extends Spaceship implements ThingInSpace {
     public final SizeOfGravityWaves getSize(){
         return this.Size;
     }
+
+    @Override
+    public String toString(){
+        return "Это "+getName()+", сделан из "+getMaterial().toString()+".\nОн летит с ускорением "+ getAccelerationInSpace()+
+                " в "+ getDirection().toString()+" направлении. Он испускает волны тяготения размера " + getSize().toString();
+    }
+
+    @Override
+    public int hashCode(){
+        return this.getMaterial().hashCode() + this.getName().hashCode() + this.getState().hashCode() +
+                this.getSize().hashCode() + this.getDirection().hashCode();
+    }
+    @Override
+    public boolean equals(Object obj) {
+        if (this.hashCode() == obj.hashCode()) return true;
+        if (this.hashCode() != obj.hashCode()) return false;
+        return this.toString() == obj.toString();
+    }
 }

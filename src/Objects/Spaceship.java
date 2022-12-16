@@ -12,12 +12,19 @@ public class Spaceship extends Objects{
         this.x_SomeminAgo = x_someminAgo;
         this.Minute = minute;
     }
-
+    @Override
+    public void beAstroneersProperty(){
+        System.out.println(getName()+" не является собственностью лунных астрономов");
+    }
     public int[] getCoordinates(){
         int[] coordinates = {this.x_SomeminAgo, this.x_now, this.Minute};
         return coordinates;
     }
 
+    @Override
+    public String toString(){
+        return "Это "+getName()+", сделан из "+getMaterial().toString();
+    }
     @Override
     public int hashCode() {
         return this.getCoordinates().hashCode() + getMaterial().hashCode();
@@ -25,8 +32,8 @@ public class Spaceship extends Objects{
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
-        return obj instanceof Spaceship && this.hashCode() == obj.hashCode();
+        if (this.hashCode() == obj.hashCode()) return true;
+        if (this.hashCode() != obj.hashCode()) return false;
+        return this.toString() == obj.toString();
     }
 }

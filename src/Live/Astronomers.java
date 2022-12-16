@@ -6,6 +6,12 @@ public class Astronomers extends Human {
     public Astronomers(String name, Mood mood, State state, String nativeLanguage){
         super(name, mood, state, nativeLanguage);
     }
+
+    @Override
+    public void gotIntelligence() {
+        System.out.println(getName()+"имееет интеллект");
+    }
+
     public boolean checkObj(Spaceship spc){
         return (spc.getState()==State.FLY);
 

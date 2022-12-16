@@ -7,7 +7,10 @@ public class Rjigl extends Policeman{
     public Rjigl(String name, Mood mood, State state, String nativeLanguage) {
         super(name, mood, state, nativeLanguage);
     }
-
+    @Override
+    public void gotIntelligence() {
+        System.out.println(getName()+"имееет интеллект");
+    }
     public void getCall(String themeOfCall){
         if (themeOfCall == "SPRUTS"){
             listen();

@@ -10,6 +10,10 @@ public class PeopleInSpaceship extends Human{
         super(names, mood, state, language);
         this.Spaceship = spaceship;
     }
+    @Override
+    public void gotIntelligence() {
+        System.out.println(getName()+"имееет интеллект");
+    }
 
     public void AgreeOnLandingPlace(){
         System.out.println(getName() + ": Мы не посадим " + this.Spaceship.getName()+" Пока не найдём корабль Незнайки и Пончика!");

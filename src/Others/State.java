@@ -12,7 +12,8 @@ public enum State {
     OBSERVE("observing"),
     SIT("sitting"),
     AREST("arrested"),
-    USE("in use");
+    USE("in use"),
+    EAT("eating");
     private final String Status;
     State(String status) {
         Status = status;

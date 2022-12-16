@@ -7,7 +7,10 @@ public class Policeman extends Human{
     public Policeman(String name, Mood mood, State state, String nativeLanguage){
         super(name, mood, state, nativeLanguage);
     }
-
+    @Override
+    public void gotIntelligence() {
+        System.out.println(getName()+"имееет интеллект");
+    }
     public void arrest(Human human){
         human.setState(State.AREST);
         System.out.println(getName() + ": Я поймал "+human.getName()+ "!");
